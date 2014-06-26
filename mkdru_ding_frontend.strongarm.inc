@@ -5,13 +5,13 @@
  */
 
 /**
- * Implementation of hook_strongarm().
+ * Implements hook_strongarm().
  */
 function mkdru_ding_frontend_strongarm() {
   $export = array();
 
-  $strongarm = new stdClass;
-  $strongarm->disabled = TRUE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mkdru_defaults';
   $strongarm->value = array(
@@ -51,13 +51,14 @@ function mkdru_ding_frontend_strongarm() {
   );
   $export['mkdru_defaults'] = $strongarm;
 
-  $strongarm = new stdClass;
-  $strongarm->disabled = TRUE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mkdru_ding';
   $strongarm->value = array(
     'pz2_path' => '/service-proxy/',
     'use_sessions' => 0,
+    'disable_ranking' => 0,
     'sp' => array(
       'user' => 'DADSTest',
       'pass' => 'DADSTest',
@@ -70,7 +71,7 @@ function mkdru_ding_frontend_strongarm() {
         'multiLimit' => 0,
         'max' => '10',
         'orderWeight' => '1',
-        'remove' => 'Fjern source facet',
+        'remove' => 'Remove source facet',
       ),
       'subject' => array(
         'displayName' => 'Subject',
@@ -79,7 +80,7 @@ function mkdru_ding_frontend_strongarm() {
         'multiLimit' => 0,
         'max' => '10',
         'orderWeight' => '2',
-        'remove' => 'Fjern subject facet',
+        'remove' => 'Remove subject facet',
       ),
       'author' => array(
         'displayName' => 'Author',
@@ -88,13 +89,24 @@ function mkdru_ding_frontend_strongarm() {
         'multiLimit' => 0,
         'max' => '10',
         'orderWeight' => '3',
-        'remove' => 'Fjern author facet',
+        'remove' => 'Remove author facet',
+      ),
+      'Date' => array(
+        'displayName' => 'Date',
+        'pz2Name' => 'date',
+        'limiter' => '',
+        'multiLimit' => 0,
+        'max' => '10',
+        'orderWeight' => '0',
+        'remove' => 'Remove Date facet',
       ),
     ),
+    'specific_author_field' => '',
+    'specific_subject_field' => '',
   );
   $export['mkdru_ding'] = $strongarm;
 
-  $strongarm = new stdClass;
+  $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mkdru_facets';
