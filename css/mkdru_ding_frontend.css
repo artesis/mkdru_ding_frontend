@@ -1,0 +1,11 @@
+#mkdru-container-Date .left,
+#mkdru-container-Date .right {
+  display: inline-block;
+  margin-right: 20px;
+}
+#mkdru-container-Date select.mkdru-date {
+  width: 100%;
+}
+#mkdru-container-Date button.mkdru-button {
+  margin-right: 7px;
+}

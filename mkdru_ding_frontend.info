@@ -5,6 +5,7 @@ package = Features
 php = 5.2.4
 version = 7.x-1.5
 project = mkdru_ding_frontend
+configure = admin/config/search/mkdru_date_facet_settings
 dependencies[] = ctools
 dependencies[] = ding_facetbrowser
 dependencies[] = mkdru
