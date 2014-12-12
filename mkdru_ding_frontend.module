@@ -5,3 +5,22 @@
  */
 
 include_once('mkdru_ding_frontend.features.inc');
+
+/**
+ * Implements hook_menu().
+ */
+function mkdru_ding_frontend_menu() {
+  $items = array();
+
+  $items['admin/config/search/mkdru_date_facet_settings'] = array(
+    'title' => 'Metasearch date facet\'s settings',
+    'description' => 'Settings for the metasearch date facet.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('mkdru_ding_frontend_admin_settings_form'),
+    'access arguments' => array('administer metasearch interfaces'),
+    'file' => 'mkdru_ding_frontend.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
