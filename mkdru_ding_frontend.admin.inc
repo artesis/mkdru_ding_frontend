@@ -15,5 +15,16 @@ function mkdru_ding_frontend_admin_settings_form($form_state) {
     '#rows' => 17,
   );
 
+  $form['#submit'][] = 'mkdru_ding_frontend_admin_settings_form_submit';
+
   return system_settings_form($form);
+}
+
+function mkdru_ding_frontend_admin_settings_form_submit(&$form, &$form_state) {
+  $options = $form_state['values']['mkdru_date_facets'];
+  $options = explode("\r\n", $options);
+  sort($options);
+  $form_state['values']['mkdru_date_facets'] = implode("\r\n", array_reverse($options));
+
+  return;
 }
