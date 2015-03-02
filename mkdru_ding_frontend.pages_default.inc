@@ -5,12 +5,12 @@
  */
 
 /**
- * Implementation of hook_default_page_manager_handlers().
+ * Implements hook_default_page_manager_handlers().
  */
 function mkdru_ding_frontend_default_page_manager_handlers() {
   $export = array();
 
-  $handler = new stdClass;
+  $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'search_mkdru_ding_panel_context';
@@ -27,7 +27,7 @@ function mkdru_ding_frontend_default_page_manager_handlers() {
     'contexts' => array(),
     'relationships' => array(),
   );
-  $display = new panels_display;
+  $display = new panels_display();
   $display->layout = 'twocol';
   $display->layout_settings = array();
   $display->panel_settings = array(
@@ -41,7 +41,7 @@ function mkdru_ding_frontend_default_page_manager_handlers() {
   $display->title = '';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass;
+    $pane = new stdClass();
     $pane->pid = 'new-1';
     $pane->panel = 'left';
     $pane->type = 'ding_facetbrowser';
@@ -59,9 +59,10 @@ function mkdru_ding_frontend_default_page_manager_handlers() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
+    $pane->locks = '';
     $display->content['new-1'] = $pane;
     $display->panels['left'][0] = 'new-1';
-    $pane = new stdClass;
+    $pane = new stdClass();
     $pane->pid = 'new-2';
     $pane->panel = 'right';
     $pane->type = 'page_tabs';
@@ -81,9 +82,10 @@ function mkdru_ding_frontend_default_page_manager_handlers() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
+    $pane->locks = '';
     $display->content['new-2'] = $pane;
     $display->panels['right'][0] = 'new-2';
-    $pane = new stdClass;
+    $pane = new stdClass();
     $pane->pid = 'new-3';
     $pane->panel = 'right';
     $pane->type = 'search_result';
@@ -112,9 +114,10 @@ function mkdru_ding_frontend_default_page_manager_handlers() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 1;
+    $pane->locks = '';
     $display->content['new-3'] = $pane;
     $display->panels['right'][1] = 'new-3';
-    $pane = new stdClass;
+    $pane = new stdClass();
     $pane->pid = 'new-4';
     $pane->panel = 'right';
     $pane->type = 'block';
@@ -132,6 +135,7 @@ function mkdru_ding_frontend_default_page_manager_handlers() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 2;
+    $pane->locks = '';
     $display->content['new-4'] = $pane;
     $display->panels['right'][2] = 'new-4';
   $display->hide_title = PANELS_TITLE_FIXED;
