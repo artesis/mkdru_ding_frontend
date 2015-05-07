@@ -97,7 +97,7 @@ function mkdru_ding_frontend_strongarm() {
         'remove' => 'Remove author facet',
       ),
       'Date' => array(
-        'displayName' => 'Date',
+        'displayName' => 'Year',
         'pz2Name' => 'date',
         'limiter' => '',
         'multiLimit' => 0,
